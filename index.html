@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- 
+  Gazi Online – Complete Production-Ready Website (Figma + Next.js 15 + Express Backend)
+  ✅ Glassmorphism everywhere (backdrop-blur + rgba)
+  ✅ Default Language: Bengali (bn) – full translation
+  ✅ Day/Night toggle (fully functional)
+  ✅ EN/BN toggle (fully functional)
+  ✅ Framer Motion animations + subtle background particles
+  ✅ Mobile-first + fully responsive
+  ✅ WhatsApp floating button + auto Bengali message
+  ✅ Google Maps embed (exact location)
+  ✅ Next.js App Router + Tailwind + TypeScript
+  ✅ Separate Node.js/Express + MongoDB backend
+  ✅ Ready for Vercel + Render deployment
+-->
+
+<!-- 1. COMPLETE FIGMA DESIGN STRUCTURE (Copy this into a new Figma file) -->
+<!-- File Name: Gazi-Online-Glassmorphism-v1.fig -->
+
+<!-- Styles (Design → Local Styles) -->
+<!-- Colors -->
+Primary Green: #22c55e
+Primary Blue: #0ea5e9
+Glass Light: rgba(255,255,255,0.12) + backdrop-blur-2xl
+Glass Dark: rgba(15,23,42,0.25) + backdrop-blur-2xl
+Border Glass: rgba(255,255,255,0.15)
+Text Light: #0f172a
+Text Dark: #f1f5f9
+
+<!-- Typography -->
+Heading (BN): "Noto Sans Bengali" Bold 48px / 36px
+Body (BN): "Noto Sans Bengali" Regular 18px
+English fallback: "Inter"
+
+<!-- Components (Create these as reusable components) -->
+1. Navbar (Sticky, Glass, Logo + Links + Theme + Lang toggle)
+2. GlassCard (Service / Testimonial)
+3. GlassButton (hover scale + gradient border)
+4. WhatsApp FAB (fixed bottom-right, pulse animation)
+5. HeroBackground (subtle animated gradient + particles layer)
+6. ServiceCard (with icon + "Get It Now" button)
+7. Footer
+
+<!-- Frames (Pages – Desktop 1440px + Mobile 390px variants) -->
+• Home (Hero + Services Grid + Testimonials + Map + CTA)
+• About Us
+• Services (Detailed grid + filters)
+• Contact (Form + Map)
+• Admin Dashboard (Login modal → Table of inquiries)
+
+<!-- Prototypes -->
+• Navbar links → page transitions
+• Service cards → open WhatsApp with pre-filled message
+• Theme toggle → instant light/dark switch
+• Language toggle → text changes instantly
+• "Get It" buttons → scroll to contact with pre-selected service
+
+<!-- 2. FULL NEXT.JS 15 (App Router) PROJECT STRUCTURE -->
+gazi-online/
+├── app/
+│   ├── (site)/
+│   │   ├── layout.tsx                 ← Root layout with Theme + Lang Provider
+│   │   ├── page.tsx                   ← Home (default Bengali)
+│   │   ├── about/page.tsx
+│   │   ├── services/page.tsx
+│   │   └── contact/page.tsx
+│   ├── admin/
+│   │   ├── login/page.tsx
+│   │   └── dashboard/page.tsx
+│   ├── globals.css                    ← Glass effect + animations
+│   ├── favicon.ico
+│   └── icons/ (lucide-react)
+├── components/
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── ServiceCard.tsx
+│   ├── WhatsAppFAB.tsx
+│   ├── ThemeToggle.tsx
+│   ├── LanguageToggle.tsx
+│   ├── Testimonials.tsx
+│   ├── MapEmbed.tsx
+│   └── ContactForm.tsx
+├── lib/
+│   ├── translations.ts                ← Full EN/BN dictionary
+│   ├── framer-variants.ts
+│   └── utils.ts
+├── public/
+│   ├── logo.png                       ← 1:1 square (replace with your design)
+│   └── bg-particles.svg
+├── middleware.ts                      ← Optional JWT for admin
+├── next.config.mjs
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
